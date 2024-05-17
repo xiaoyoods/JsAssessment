@@ -1,0 +1,47 @@
+// Create a variable to hold your NFTs
+let nfts = [];
+
+// This function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata,
+// and store it in the variable above.
+function mintNFT(id, name, eyeColor, shirtType, bling) {
+    const nft = {
+        id: id,
+        name: name,
+        eyeColor: eyeColor,
+        shirtType: shirtType,
+        bling: bling
+    };
+    nfts.push(nft);
+    console.log("Minted:", nft);
+}
+
+// Create a "loop" that will go through an "array" of NFTs
+// and print their metadata with console.log()
+function listNFTs() {
+    for (let i = 0; i < nfts.length; i++) {
+        console.log(`ID: ${nfts[i].id}`);
+        console.log(`Name: ${nfts[i].name}`);
+        console.log(`Eye Color: ${nfts[i].eyeColor}`);
+        console.log(`Shirt Type: ${nfts[i].shirtType}`);
+        console.log(`Bling: ${nfts[i].bling}`);
+        console.log("---------------------------");
+    }
+}
+
+// Print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    return nfts.length;
+}
+
+// Call your functions below this line
+mintNFT(1, "Lebron", "Black", "Lakers Jersey", "Gold Chain");
+mintNFT(2,"Jordan","Blue", "Bulls Jersey","Necklace")
+mintNFT(3,"Kobe","Brown", "Lakers Jersey","Gold Ring")
+
+
+// List all NFTs
+listNFTs();
+
+// Print the total supply of NFTs
+console.log("Total Supply:", getTotalSupply());
